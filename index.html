@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Predicando en Tiempos Oscuros — Estudio Bíblico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f5f1eb;
+      --card: #ffffff;
+      --muted: #5d5047;
+      --accent: #8B4513;
+      --accent-2: #A0522D;
+      --accent-light: #F5DEB3;
+      --maxw: 1200px;
+      --shadow: 0 10px 30px rgba(139, 69, 19, 0.12);
+      --shadow-light: 0 6px 20px rgba(139, 69, 19, 0.06);
+      --border-radius: 12px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #f0ebe5);
+      color: #2b2a27;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header */
+    .church-header {
+      text-align: center;
+      padding: 25px 0;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .church-name {
+      font-family: Merriweather, serif;
+      font-size: 28px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    
+    .church-motto {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    .header-icon {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      color: var(--accent);
+      font-size: 24px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, rgba(139, 69, 19, 0.01) 100%);
+      border-radius: var(--border-radius);
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+    
+    .hero-content h1 {
+      font-family: Merriweather, serif;
+      font-size: 38px;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+    
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 5px 12px;
+      background-color: var(--accent-light);
+      border-radius: 20px;
+    }
+    
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+    
+    .hero-image {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      height: 100%;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-direction: column;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .placeholder-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    
+    /* Magazine Layout */
+    .magazine-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    @media (min-width: 992px) {
+      .magazine-layout {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(139, 69, 19, 0.1);
+      border-left-color: var(--accent);
+    }
+    
+    .main-point-card {
+      border-left-color: var(--accent);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    
+    .card-number {
+      background: var(--accent);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 18px;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+    }
+    
+    .card-title {
+      font-family: Merriweather, serif;
+      font-size: 26px;
+      color: #2c3e50;
+      margin: 0;
+    }
+    
+    .card-subtitle {
+      font-family: Merriweather, serif;
+      font-size: 22px;
+      color: var(--accent);
+      margin: 20px 0 15px;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent);
+    }
+    
+    .card-content {
+      color: var(--muted);
+    }
+    
+    .card-content ul, .card-content ol {
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .card-content li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    
+    /* Main sections */
+    .main-section {
+      margin-bottom: 25px;
+    }
+    
+    .main-title {
+      display: flex;
+      align-items: center;
+      font-family: Merriweather, serif;
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    
+    .main-icon {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    
+    /* Two-column layout for cards */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin: 25px 0;
+    }
+    
+    @media (min-width: 768px) {
+      .two-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    /* Quote */
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 20px 25px;
+      margin: 25px 0;
+      background: linear-gradient(180deg, #fff 0%, rgba(139, 69, 19, 0.05) 100%);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+    
+    .quote-text {
+      font-family: Merriweather, serif;
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    
+    .quote-reference {
+      text-align: right;
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    /* Interactive Elements */
+    .interactive-element {
+      background: linear-gradient(135deg, #f5f0e6, #F5DEB3);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    
+    .interactive-element:hover {
+      background: linear-gradient(135deg, #F5DEB3, #e8d0a9);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(139, 69, 19, 0.1);
+    }
+    
+    .interactive-title {
+      font-family: Merriweather, serif;
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      background: transparent;
+    }
+    
+    .sidebar-card {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-light);
+    }
+    
+    .sidebar-title {
+      font-family: Merriweather, serif;
+      font-size: 22px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .tag {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 3px 6px rgba(139, 69, 19, 0.2);
+    }
+    
+    /* Questions Section */
+    .questions-section {
+      margin-top: 40px;
+    }
+    
+    .question-item {
+      background: linear-gradient(180deg, #fff 0%, #f9f7f2 100%);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--accent);
+    }
+    
+    .question-text {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .answer-text {
+      color: var(--muted);
+      padding: 15px;
+      background-color: rgba(139, 69, 19, 0.05);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-2);
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 50px;
+      color: var(--muted);
+      font-size: 15px;
+      border-top: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    
+    /* Stats & Numbers */
+    .stats-box {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      padding: 20px;
+      min-width: 150px;
+    }
+    
+    .stat-number {
+      font-family: Merriweather, serif;
+      font-size: 36px;
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: var(--muted);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 767px) {
+      .container {
+        padding: 15px;
+      }
+      
+      .hero {
+        padding: 25px 20px;
+      }
+      
+      .hero-content h1 {
+        font-size: 30px;
+      }
+      
+      .card {
+        padding: 25px 20px;
+      }
+      
+      .card-title {
+        font-size: 22px;
+      }
+      
+      .header-icon {
+        display: none;
+      }
+      
+      .stats-box {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    .delay-5 { animation-delay: 0.5s; opacity: 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Church Header -->
+    <header class="church-header">
+      <div class="church-name">Iglesia Bautista de Sola</div>
+      <div class="church-motto">Solo Cristo Salva</div>
+      <div class="header-icon">
+        <i class="fas fa-church"></i>
+      </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="hero-content">
+        <div class="eyebrow">Clase Bíblica</div>
+        <h1>Predicando en Tiempos Oscuros</h1>
+        <p class="lead">En medio de la apostasía y el rechazo a la verdad bíblica, la Iglesia ha recibido el encargo solemne de predicar fielmente la Palabra de Dios, sin comprometer el mensaje para agradar a las personas.</p>
+        
+        <div class="interactive-element" onclick="scrollToSection('introduction')">
+          <div class="interactive-title">Comenzar Estudio</div>
+          <p>Explora el encargo solemne de predicar la Palabra en tiempos difíciles</p>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          <div class="placeholder-icon">
+            <i class="fas fa-cross"></i>
+          </div>
+          <h3 style="color: white; margin-bottom: 10px;">Predicando la Palabra</h3>
+          <p style="color: rgba(255,255,255,0.9);">"Predica la Palabra; persiste en hacerlo, sea o no sea oportuno..."<br>2 Timoteo 4:2</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats -->
+    <div class="stats-box fade-in delay-1">
+      <div class="stat-item">
+        <div class="stat-number">2 Tim. 4:1-5</div>
+        <div class="stat-label">Texto Base</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Partes Principales</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Imperativos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,000+</div>
+        <div class="stat-label">Años Relevantes</div>
+      </div>
+    </div>
+    
+    <!-- Magazine Layout -->
+    <div class="magazine-layout">
+      <main class="main-content">
+        <!-- Introduction -->
+        <section class="card fade-in delay-2" id="introduction">
+          <div class="card-header">
+            <div class="card-number">1</div>
+            <h2 class="card-title">Introducción: El Encargo Solemne</h2>
+          </div>
+          <div class="card-content">
+            <p>En presencia de Dios y de Cristo Jesús, que ha de venir en su reino y que juzgará a los vivos y a los muertos, Pablo da a Timoteo un encargo solemne: <strong>"Predica la Palabra"</strong> (2 Timoteo 4:1-2). Este mandato es urgente y trascendental, especialmente en tiempos de apostasía.</p>
+            
+            <div class="quote">
+              <div class="quote-text">"Predica la Palabra; persiste en hacerlo, sea o no sea oportuno; corrige, reprende y anima con mucha paciencia, sin dejar de enseñar."</div>
+              <div class="quote-reference">2 Timoteo 4:2</div>
+            </div>
+            
+            <p>La historia de Spurgeon ilustra el poder transformador de la predicación simple y fiel. Un joven buscando refugio de una tormenta de nieve escuchó a un humilde diácono predicar de Isaías 45:22: "Mirad a mí, y sed salvos, todos los términos de la tierra". Esas palabras simples marcaron el comienzo del ministerio de uno de los predicadores más poderosos de la historia.</p>
+            
+            <div class="interactive-element" onclick="toggleContent('context-more')">
+              <div class="interactive-title">Contexto Histórico</div>
+              <p>¿Por qué Pablo le escribió esto a Timoteo?</p>
+              <div id="context-more" style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(139, 69, 19, 0.05); border-radius: 8px;">
+                <p>Pablo estaba prisionero en Roma y sabía que su muerte era inminente. Timoteo pastoreaba la iglesia en Éfeso, una ciudad llena de falsos maestros que enseñaban mitos, genealogías interminables y doctrinas legalistas. La iglesia estaba comprometida doctrinalmente, y Timoteo enfrentaba presión para suavizar el mensaje.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- First Point: Before God -->
+        <section class="card main-point-card fade-in delay-2">
+          <div class="card-header">
+            <div class="card-number">2</div>
+            <h2 class="card-title">I. Delante de Dios: La Autoridad del Encargo</h2>
+          </div>
+          <div class="card-content">
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-user-check main-icon"></i>
+                <h3>Recordando Quien Nos Llamó</h3>
+              </div>
+              <p>El encargo de predicar es solemne porque viene "en presencia de Dios y de Cristo Jesús" (v.1). No es una sugerencia humana, sino un mandato divino. Pablo remite a Timoteo a la autoridad de Dios, quien lo llamó a predicar.</p>
+              
+              <div class="two-columns">
+                <div>
+                  <h4>El Peligro de Conformarse al Mundo</h4>
+                  <p>La iglesia de Éfeso enfrentaba la tentación de cambiar el mensaje para agradar a la gente, llenar la iglesia u obtener beneficios materiales. Pablo advierte contra esto recordando que Dios es nuestro Juez, no las personas.</p>
+                </div>
+                
+                <div>
+                  <h4>Falsos Maestros en Éfeso</h4>
+                  <p>Timoteo llegó a una congregación con la mente llena de mentiras. Pablo le ordena: "manda a algunos... que dejen de enseñar doctrinas falsas" (1 Timoteo 1:3-5). No se le manda a dialogar, sino a ordenar.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-bullhorn main-icon"></i>
+                <h3>El Encargo al que Fuimos Llamados (v.2)</h3>
+              </div>
+              
+              <p>Pablo usa una serie de imperativos estructurados alrededor de "predicar la Palabra":</p>
+              
+              <div class="two-columns">
+                <div>
+                  <h4>1. Predica la Palabra</h4>
+                  <p>Anunciar, proclamar públicamente algo importante. No es solo enseñar, sino proclamar con urgencia.</p>
+                </div>
+                
+                <div>
+                  <h4>2. Persiste en Hacerlo</h4>
+                  <p>Permanece en la predicación, no te desvíes. Muchos comienzan bien pero cambian el mensaje cuando enfrentan persecución.</p>
+                </div>
+              </div>
+              
+              <div class="two-columns">
+                <div>
+                  <h4>3. Sea o no Sea Oportuno</h4>
+                  <p>En tiempos buenos y malos, con apoyo o sin él. Predicar cuando es difícil y cuando es fácil.</p>
+                </div>
+                
+                <div>
+                  <h4>4. Corrige, Reprende, Anima</h4>
+                  <p>Usar la Palabra para corregir errores doctrinales, reprender el pecado y animar a los creyentes.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="interactive-element" onclick="toggleContent('application-1')">
+              <div class="interactive-title">Aplicación para Hoy</div>
+              <p>¿Cómo se aplica esto a nuestra situación actual?</p>
+              <div id="application-1" style="display: none; margin-top: 20px;">
+                <p>Hoy tenemos iglesias llenas de predicadores carentes de Biblia. El púlpito se ha llenado de motivación, historias y espectáculo, pero no de la Palabra de Dios. Muchos han cambiado el aplauso de Dios por el aplauso de los hombres. Debemos devolver la centralidad de la Palabra de Dios a nuestros púlpitos.</p>
+                
+                <div class="questions-section" style="margin-top: 20px;">
+                  <div class="question-item">
+                    <div class="question-text">Preguntas para Reflexión Personal:</div>
+                    <div class="answer-text">
+                      <ul>
+                        <li>¿Qué tan importante es para ti la Biblia?</li>
+                        <li>¿Qué tiempo dedicas a meditar en ella diariamente?</li>
+                        <li>¿Cuán preocupado estás por recibir una enseñanza fiel?</li>
+                        <li>¿Comparas las enseñanzas que recibes con la Biblia?</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Second Point: Difficult Times -->
+        <section class="card main-point-card fade-in delay-3">
+          <div class="card-header">
+            <div class="card-number">3</div>
+            <h2 class="card-title">II. Los Tiempos Peligrosos: Apostasía y Rechazo</h2>
+          </div>
+          <div class="card-content">
+            <div class="quote">
+              <div class="quote-text">"Porque llegará el tiempo en que no van a tolerar la sana doctrina, sino que, llevados de sus propios deseos, se rodearán de maestros que les digan las novelerías que quieren oír."</div>
+              <div class="quote-reference">2 Timoteo 4:3-4</div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-exclamation-triangle main-icon"></i>
+                <h3>Características de la Apostasía</h3>
+              </div>
+              
+              <ul>
+                <li><strong>No tolerarán la sana doctrina:</strong> Rechazarán la enseñanza bíblica que confronta el pecado.</li>
+                <li><strong>Comezón de oír:</strong> Buscarán maestros que les digan lo que quieren escuchar.</li>
+                <li><strong>Se volverán a los mitos:</strong> Preferirán fábulas y tradiciones sobre la verdad bíblica.</li>
+                <li><strong>Maestros conforme a sus deseos:</strong> Buscarán líderes que validen su estilo de vida pecaminoso.</li>
+              </ul>
+              
+              <p>La palabra griega <em>epithumía</em> (traducida como "deseos") indica un intenso deseo pervertido que toma control de la mente. Las personas buscarán maestros tan malos como ellos mismos.</p>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-church main-icon"></i>
+                <h3>Ejemplos Contemporáneos de Falsas Enseñanzas</h3>
+              </div>
+              
+              <div class="two-columns">
+                <div>
+                  <h4>Evangelio de la Prosperidad</h4>
+                  <p>Enseña que los cristianos no deben enfermarse ni sufrir dificultades, y que la fe garantiza riqueza material. Es un negocio donde los únicos enriquecidos son los líderes.</p>
+                </div>
+                
+                <div>
+                  <h4>Movimiento Palabra de Fe</h4>
+                  <p>Enfatiza la "declaración positiva" y enseña que nuestras palabras crean realidad. Tiene raíces en el hinduismo y el espiritismo, no en la Biblia.</p>
+                </div>
+              </div>
+              
+              <div class="interactive-element" onclick="toggleContent('false-teachers')">
+                <div class="interactive-title">Lista de Predicadores Populares</div>
+                <p>¿Quiénes son algunos exponentes de estas enseñanzas?</p>
+                <div id="false-teachers" style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(139, 69, 19, 0.05); border-radius: 8px;">
+                  <p>Según el documento, algunos predicadores populares asociados con el evangelio de la prosperidad incluyen:</p>
+                  <ul>
+                    <li>Dante Gebel</li>
+                    <li>Marcos Witt</li>
+                    <li>Cash Luna</li>
+                    <li>Guillermo Maldonado</li>
+                    <li>Samuel Rodríguez</li>
+                  </ul>
+                  <p style="margin-top: 10px; font-style: italic;">Pablo pregunta: "¿Qué dice la Biblia sobre cualquiera que predique un evangelio diferente?" (Gálatas 1:8-9)</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-balance-scale main-icon"></i>
+                <h3>La Elección Fundamental</h3>
+              </div>
+              
+              <p>Pablo plantea una disyuntiva crucial: "Si agradara a los hombres, no fuera siervo de Cristo" (Gálatas 1:10).</p>
+              
+              <div class="two-columns">
+                <div>
+                  <h4>Buscar el Aplauso de los Hombres</h4>
+                  <ul>
+                    <li>Suavizar el mensaje</li>
+                    <li>Enseñar lo que la gente quiere oír</li>
+                    <li>Evitar temas controvertidos</li>
+                    <li>Priorizar el crecimiento numérico</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4>Buscar el Aplauso de Dios</h4>
+                  <ul>
+                    <li>Predicar todo el consejo de Dios</li>
+                    <li>Enseñar la verdad aunque duela</li>
+                    <li>Confrontar el pecado</li>
+                    <li>Priorizar la fidelidad sobre los números</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Third Point: Different People -->
+        <section class="card main-point-card fade-in delay-4">
+          <div class="card-header">
+            <div class="card-number">4</div>
+            <h2 class="card-title">III. Hombres Diferentes: El Contraste de la Fidelidad</h2>
+          </div>
+          <div class="card-content">
+            <div class="quote">
+              <div class="quote-text">"Tú, por el contrario, sé prudente en todas las circunstancias, soporta los sufrimientos, dedícate a la evangelización; cumple con los deberes de tu ministerio."</div>
+              <div class="quote-reference">2 Timoteo 4:5</div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-user-shield main-icon"></i>
+                <h3>El "Pero Tú" de Dios</h3>
+              </div>
+              
+              <p>En medio de cada circunstancia difícil, Dios reserva hombres fieles. Pablo establece un contraste: mientras otros se desvían, "pero tú" debes permanecer fiel.</p>
+              
+              <p>Dios siempre tiene un "pero tú" para los tiempos más oscuros. Como le dijo a Elías: "Yo me he reservado siete mil hombres que no han doblado sus rodillas ante Baal" (1 Reyes 19:18).</p>
+              
+              <h4 class="card-subtitle">Cuatro Mandatos para Timoteo (y para Nosotros)</h4>
+              
+              <div class="two-columns">
+                <div>
+                  <h5>1. Sé Prudente</h5>
+                  <p>Mantén tu cabeza y corazón enfocados en lo que verdaderamente importa. Discierne los tiempos.</p>
+                </div>
+                
+                <div>
+                  <h5>2. Soporta los Sufrimientos</h5>
+                  <p>Los demás renuncian a la cruz para evitar persecución. Tú completa lo que falta de los sufrimientos de Cristo.</p>
+                </div>
+              </div>
+              
+              <div class="two-columns">
+                <div>
+                  <h5>3. Haz Obra de Evangelista</h5>
+                  <p>No dejes de anunciar las buenas nuevas en todo tiempo. Predica a Cristo, anuncia a Cristo, proclama a Cristo.</p>
+                </div>
+                
+                <div>
+                  <h5>4. Cumple tu Ministerio</h5>
+                  <p>Lleva a cabo lo que recibiste del Señor. Cumple el llamado que has recibido.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-hands-helping main-icon"></i>
+                <h3>La Fuente de Nuestra Fortaleza</h3>
+              </div>
+              
+              <p>No somos nosotros quienes haremos esta obra, sino Dios en nosotros y a través de nosotros. "Separados de mí nada podéis hacer" (Juan 15:5).</p>
+              
+              <div class="quote">
+                <div class="quote-text">"Hombres más talentosos han caído, hombres con ministerios de años han caído. No es el hombre, no es el nombre, es el Dios todopoderoso que obra en nosotros."</div>
+              </div>
+              
+              <div class="interactive-element" onclick="toggleContent('missionary-story')">
+                <div class="interactive-title">Historia Ilustrativa</div>
+                <p>Una misionera en China durante la Segunda Guerra Mundial</p>
+                <div id="missionary-story" style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(139, 69, 19, 0.05); border-radius: 8px;">
+                  <p>Una misionera en China, cuando todo parecía perdido y no había opciones humanas de sobrevivir, fue confrontada por una niña que rescató de un templo pagano. La niña le dijo: "Dios guió a Israel al desierto, a través del mar Rojo. Si Dios lo hizo con ellos, puede hacerlo con nosotros también."</p>
+                  <p>La misionera respondió: "El problema, mi niña amada, es que yo no soy Moisés." A lo que la pequeña contestó: "Es cierto, tú no eres Moisés, pero Dios sigue siendo Dios."</p>
+                  <p style="margin-top: 10px; font-style: italic;">La mano poderosa de Dios no se ha acortado para bendecir a su pueblo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Questions Section -->
+        <section class="questions-section fade-in delay-5">
+          <h2 class="card-title" style="margin-bottom: 25px;">Preguntas para Discusión Grupal</h2>
+          
+          <div class="question-item">
+            <div class="question-text">1. ¿Qué presiones enfrentamos hoy para cambiar o suavizar el mensaje del evangelio? ¿Cómo podemos resistirlas?</div>
+            <div class="answer-text">
+              <p>Presiones comunes incluyen: deseo de crecimiento numérico, temor al rechazo, influencia de las redes sociales, secularización de la cultura. Podemos resistirlas recordando que servimos a Dios, no a los hombres, y que daremos cuenta ante Él.</p>
+            </div>
+          </div>
+          
+          <div class="question-item">
+            <div class="question-text">2. ¿Cómo podemos discernir entre un predicador fiel y uno que simplemente dice lo que la gente quiere oír?</div>
+            <div class="answer-text">
+              <p>Un predicador fiel: 1) Predica todo el consejo de Dios, no solo temas populares; 2) Confronta el pecado; 3) Enseña la suficiencia de Cristo, no promete prosperidad material; 4) Vive consistentemente con lo que predica; 5) Apunta a la gloria de Dios, no a la suya propia.</p>
+            </div>
+          </div>
+          
+          <div class="question-item">
+            <div class="question-text">3. ¿Qué significa para nosotros hoy "predicar a tiempo y fuera de tiempo"?</div>
+            <div class="answer-text">
+              <p>Significa proclamar el evangelio en todas las circunstancias: cuando es popular y cuando no lo es, cuando somos aceptados y cuando somos rechazados, en tiempos de paz y en tiempos de persecución. Requiere valor y dependencia del Espíritu Santo.</p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="card fade-in delay-5">
+          <div class="card-header">
+            <div class="card-number">5</div>
+            <h2 class="card-title">Conclusión: Nuestro Llamado en Tiempos Oscuros</h2>
+          </div>
+          <div class="card-content">
+            <div class="quote">
+              <div class="quote-text">"Permanece fiel a la sublime tarea de la predicación. En medio de la crisis y el rechazo a la verdad, seamos faros que anuncien el evangelio de salvación."</div>
+            </div>
+            
+            <div class="two-columns">
+              <div>
+                <h4>La Mala Noticia</h4>
+                <p>Los tiempos no van a mejorar. La degradación moral seguirá aumentando. El rechazo a la Palabra de Dios seguirá en aumento. La apostasía será más común que la verdadera adoración.</p>
+              </div>
+              
+              <div>
+                <h4>La Buena Noticia</h4>
+                <p>Dios sigue siendo Dios. Él es nuestro Juez. A Él servimos. De Él recibiremos la recompensa. Y si bien no podemos controlar el mañana, podemos descansar en las manos de Aquel que lo sostiene.</p>
+              </div>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-volume-up main-icon"></i>
+                <h3>Palabras a la Iglesia</h3>
+              </div>
+              
+              <p>No te conformes a este mundo. Permite que Dios te transforme a través de su Palabra. No permitas que la Palabra de Dios sea quitada del lugar que Dios le ha dado. Nunca diluyas su significado por quedar bien con la gente. Recuerda que daremos cuenta ante el Rey del universo.</p>
+              
+              <p><strong>Ama la Biblia, lee la Biblia, medita en la Biblia, estudia la Biblia, obedece la Biblia.</strong> Y una vez que lo hayas hecho, tendrás moral y carácter para predicar la Biblia.</p>
+            </div>
+            
+            <div class="main-section">
+              <div class="main-title">
+                <i class="fas fa-user-tie main-icon"></i>
+                <h3>Palabras a los Predicadores</h3>
+              </div>
+              
+              <p>Predica como un moribundo hablando a moribundos. Predica como si este fuera el único sermón que fueras a predicar. Predica como si las vidas de las personas dependieran de ello. Predica a tiempo y fuera de tiempo, te escuchen o no te escuchen.</p>
+              
+              <div class="quote">
+                <div class="quote-text">"Entrega tu vida al solemne encargo de la predicación, y al hacerlo así, Dios permita que nos demos cuenta que verdaderamente, Dios nos está usando para hacer todas esas cosas."</div>
+              </div>
+            </div>
+            
+            <div class="interactive-element" onclick="scrollToSection('introduction')">
+              <div class="interactive-title">Decisión Final</div>
+              <p>Tienes dos opciones: ser parte de los que rebajan los estándares del evangelio para quedar bien con la gente, o ser de aquellos que predican la Biblia fielmente, sin importar el costo.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-card fade-in delay-1">
+          <h3 class="sidebar-title">Estructura del Sermón</h3>
+          <ul>
+            <li>Introducción: El encargo solemne</li>
+            <li>I. Delante de Dios: La autoridad</li>
+            <li>II. Tiempos peligrosos: Apostasía</li>
+            <li>III. Hombres diferentes: Fidelidad</li>
+            <li>Conclusión: Nuestro llamado</li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-card fade-in delay-2">
+          <h3 class="sidebar-title">Conceptos Clave</h3>
+          <div class="tags">
+            <div class="tag">Predicación</div>
+            <div class="tag">Fidelidad</div>
+            <div class="tag">Apostasía</div>
+            <div class="tag">Sana Doctrina</div>
+            <div class="tag">2 Timoteo</div>
+            <div class="tag">Timoteo</div>
+            <div class="tag">Falsos Maestros</div>
+            <div class="tag">Evangelio</div>
+          </div>
+        </div>
+        
+        <div class="sidebar-card fade-in delay-3">
+          <h3 class="sidebar-title">Versículos Clave</h3>
+          <ul>
+            <li>2 Timoteo 4:1-5</li>
+            <li>1 Timoteo 1:3-5</li>
+            <li>Gálatas 1:10</li>
+            <li>1 Reyes 19:18</li>
+            <li>Juan 15:5</li>
+            <li>Mateo 5:11-12</li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-card fade-in delay-4">
+          <h3 class="sidebar-title">Próxima Clase</h3>
+          <p><strong>La Centralidad de la Palabra</strong></p>
+          <p>Estudiaremos cómo mantener la Biblia en el centro de la vida personal y de la iglesia, y los peligros de sustituirla por tradiciones, experiencias o emociones.</p>
+        </div>
+      </aside>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer fade-in delay-5">
+      <p>Iglesia Bautista de Sola — Solo Cristo Salva</p>
+      <p>Clase bíblica: Predicando en Tiempos Oscuros</p>
+      <p style="margin-top: 15px; font-size: 14px; color: #888;">"Predica la Palabra; persiste en hacerlo, sea o no sea oportuno"</p>
+    </footer>
+  </div>
+
+  <script>
+    // Función para desplazarse suavemente a una sección
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    // Función para mostrar/ocultar contenido adicional
+    function toggleContent(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.style.display === 'none' || element.style.display === '') {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    }
+    
+    // Añadir interactividad a las tarjetas
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      
+      cards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Solo activar si no se hizo clic en un elemento interactivo interno
+          if (!e.target.closest('.interactive-element')) {
+            this.classList.toggle('expanded');
+          }
+        });
+      });
+      
+      // Añadir animaciones al hacer scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      }, observerOptions);
+      
+      // Observar elementos con clase fade-in pero que aún no se han mostrado
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
